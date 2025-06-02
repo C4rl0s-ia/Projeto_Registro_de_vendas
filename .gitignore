@@ -1,0 +1,19 @@
+# Ignore arquivos do Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore arquivos temporários
+*.log
+*.tmp
+*.bak
+
+# Ignore build
+Debug/
+Release/
+*.exe
+*.dll
+*.obj
+*.pdb
