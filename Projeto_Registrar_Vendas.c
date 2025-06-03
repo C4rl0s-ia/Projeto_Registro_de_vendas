@@ -47,13 +47,21 @@ void calcular_valor_diario(Dia* dia);
 int main(void) {
 
 	Dia dia = { 0 }; // inicializa tudo com 0
-	Venda v1 = { REFEICAO, 0.8f, {1, 5.0f} };
-	Venda v2 = { REFEICAO, 0.8f, {1, 5.0f} };
-	Venda v3 = { REFEICAO, 0.8f, {1, 5.0f} };
+	Venda v[] = {
+		{ REFEICAO, 0.8f, {1, 5.0f} },
+		{ REFEICAO, 0.8f, {1, 5.0f} },
+		{ REFEICAO, 0.8f, {1, 5.0f} },
+		{ REFEICAO, 0.8f, {1, 5.0f} },
+		{ REFEICAO, 0.8f, {1, 5.0f} },
+		{ REFEICAO, 0.8f, {1, 5.0f} },
+		{ REFEICAO, 0.8f, {1, 5.0f} },
+		{ REFEICAO, 0.8f, {1, 5.0f} }
+	};
+	
+	for (int i = 0; i < 10; i++) {
+		registrar_venda(&dia, v[i]);
+	}
 
-	registrar_venda(&dia, v1);
-	registrar_venda(&dia, v2);
-	registrar_venda(&dia, v3);
 	calcular_valor_diario(&dia);
 
 	printf("O valor total de vendas do dia 1 foi de: R$ %0.2f", dia.valor_total_vendas_dia);
